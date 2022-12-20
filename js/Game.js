@@ -20,7 +20,6 @@ class Game {
     overlay.style.display = 'none';
     overlayActive = false;
     this.activePhrase = this.getRandomPhrase();
-    console.log(this.activePhrase.phrase); // ERASE LATER ~~~~~~~~~~~~~~~~~~~~~~
     this.activePhrase.addPhraseToDisplay();
   };
 
