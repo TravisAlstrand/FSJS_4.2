@@ -39,7 +39,7 @@ class Game {
   };
 
   removeLife = () => {
-    hearts[this.missed].src = './images/lostHeart.png';
+    hearts[this.missed].src = 'images/lostHeart.png';
     this.missed++;
     if (this.missed === 5) {
       this.gameOver(false);
@@ -69,7 +69,7 @@ class Game {
   resetBoard = () => {
     // RESET HEARTS
     hearts.forEach(heart => {
-      heart.src = './images/liveHeart.png';
+      heart.src = 'images/liveHeart.png';
     });
     // RESET KEYBOARD
     keys.forEach(key => {
