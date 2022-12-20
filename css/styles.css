@@ -89,7 +89,6 @@ button {
   color: #3a3f58;
 }
 
-
 /* Phrase */
 
 .letter {
@@ -107,8 +106,6 @@ button {
   width: 15px;
 }
 
-
-
 .show {
   color: #fff;
   background-color: #4ac0d5;
@@ -121,7 +118,6 @@ button {
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
 }
-
 
 /* Keyboard */
 
@@ -158,7 +154,6 @@ button {
   border-bottom: solid 4px rgba(0, 0, 0, 0);
   border-right: solid 3px rgba(0, 0, 0, 0);
 }
-
 
 /* Overlay */
 
