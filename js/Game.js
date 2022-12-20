@@ -18,6 +18,7 @@ class Game {
 
   startGame = () => {
     overlay.style.display = 'none';
+    overlayActive = false;
     this.activePhrase = this.getRandomPhrase();
     console.log(this.activePhrase.phrase); // ERASE LATER ~~~~~~~~~~~~~~~~~~~~~~
     this.activePhrase.addPhraseToDisplay();
@@ -39,14 +40,44 @@ class Game {
   };
 
   removeLife = () => {
-    console.log('remove life called')
+    hearts[this.missed].src = '../images/lostHeart.png';
+    this.missed++;
+    if (this.missed === 5) {
+      this.gameOver(false);
+    };
   };
 
   checkForWin = () => {
-    console.log('check win called')
+    const hiddenLetters = document.querySelectorAll('.hide');
+    if (!hiddenLetters.length) {
+      this.gameOver(true);
+    };
   };
 
-  gameOver = () => {
+  gameOver = (won) => {
+    if (won) {
+      gameOverMsg.innerText = 'Congrats, you won!';
+      overlay.className = 'win';
+    } else {
+      gameOverMsg.innerText = 'Bummer, you lost!';
+      overlay.className = 'lose';
+    };
+    startBtn.innerText = 'Play again?';
+    overlay.style.display = 'inherit';
+    overlayActive = true;
+  };
 
+  resetBoard = () => {
+    // RESET HEARTS
+    hearts.forEach(heart => {
+      heart.src = '../images/liveHeart.png';
+    });
+    // RESET KEYBOARD
+    keys.forEach(key => {
+      key.disabled = false;
+      key.className = 'key';
+    });
+    // RESET PHRASE BOARD
+    phraseUL.innerHTML = '';
   };
 };
